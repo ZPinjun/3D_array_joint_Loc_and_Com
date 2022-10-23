@@ -27,7 +27,7 @@ else
         r2 = R(:,2);
         r3 = R(:,3);
         M1 = [-r3 zeros(3,1) r2; zeros(3,1) -r3 -r1; r1 r2 zeros(3,1)];
-        M1 = normalize(M1, 'norm', 2);
+        M1 = M1/sqrt(2);
         M2 = [zeros(3,3), eye(3), zeros(3,1); M1, zeros(size(M1,1),4); zeros(1,6), 1];
         MM = M2*(M2'*FIM*M2)^(-1)*M2';
         CRLB_pos = abs(sqrt(trace(MM(1:3,1:3))));

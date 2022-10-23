@@ -38,12 +38,14 @@ for i = 1:D
     % AOD
     tAOD_global = Ps(:,n) - Pb(:,m);   % in the global coordinate system
     tAOD_local = Rb(:,:,m).'*tAOD_global;   % in the BS's local coordinate system
-    tAOD_local = normalize(tAOD_local, 'norm', 2);
+    %tAOD_local = normalize(tAOD_local, 'norm', 2);
+    tAOD_local = tAOD_local/norm(tAOD_local,2);
     PsiB(:,i) = pAE_B.' * tAOD_local;
     % AOA
     tAOA_global = Pb(:,m) - Ps(:,n);   % in the global coordinate system
     tAOA_local = Rs(:,:,n).'*tAOA_global;   % in the BS's local coordinate system
-    tAOA_local = normalize(tAOA_local, 'norm', 2);
+    %tAOA_local = normalize(tAOA_local, 'norm', 2);
+    tAOA_local = tAOA_local/norm(tAOA_local,2);
     PsiS(:,i) = pAE_S.' * tAOA_local;
 end
 
