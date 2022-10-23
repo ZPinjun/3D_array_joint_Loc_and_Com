@@ -1,4 +1,4 @@
-# 3D_array_joint_Localization_and_communication
+# 3D_array_joint_Loc_and_Com
 
 Notes:
 1. To run the code, you may need to install the Manopt toolbox (https://www.manopt.org).
